@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: animalsDB
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: animals
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+
+  app:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - '8000:80'
+    environment:
+      PMA_HOST: db
