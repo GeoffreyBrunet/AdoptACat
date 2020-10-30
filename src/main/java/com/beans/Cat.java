@@ -4,8 +4,7 @@ public class Cat {
     private int idCat;
     private String nom, age;
 
-    public Cat(int idCat, String nom, String age) {
-        this.idCat = idCat;
+    public Cat(String nom, String age) {
         this.nom = nom;
         this.age = age;
     }

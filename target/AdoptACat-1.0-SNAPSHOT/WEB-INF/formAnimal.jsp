@@ -11,13 +11,13 @@
 
 <body>
 <form action="inscription" method="get">
-    <p>Add a cat </p>
+    <%--@declare id="agecat"--%><%--@declare id="nom"--%><p>Add a cat </p>
 
     <label for="nom">Cat's name: </label>
-    <input type="text" name="firtName">
+    <input type="text" name="catName">
 
-    <label for="age">Cat's age: </label>
-    <input type="text" name="adresse">
+    <label for="ageCat">Cat's age: </label>
+    <input type="text" name="ageCat">
 
     <input type="submit" value="Valider">
     <input type="submit" value="Annuler">

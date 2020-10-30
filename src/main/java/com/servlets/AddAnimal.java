@@ -1,6 +1,7 @@
 package com.servlets;
 
 import com.beans.Cat;
+import com.connexion.Connexion;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,9 +13,12 @@ import java.io.IOException;
 @WebServlet(name = "AddAnimal")
 public class AddAnimal extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*Cat cat = new Cat();
+        Connexion c = new Connexion();
+        c.getConnexion();
+        Cat cat = new Cat(request.getParameter ("catName"), request.getParameter ("ageCat"));
         cat.setNom(request.getParameter ("catName"));
-        cat.setAge(request.getParameter ("ageCat"));*/
+        cat.setAge(request.getParameter ("ageCat"));
+        c.addCat(cat);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
